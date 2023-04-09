@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Lora:ital@1&display=swap');
+$generalFont:'Lora', serif;;
+$nameFont:'Delicious Handrawn', cursive;
 
 /* npm install sass. */
 
-$generalFont:'Lora', serif;;
-$nameFont:'Delicious Handrawn', cursive;
+
 %gridcenter{
     display: grid;
     align-items: center;
     justify-content: center;  
 }
 *{
+    font-size: 15px;
     margin: 0;
     padding:0;
     font-family: $generalFont;
@@ -23,7 +25,7 @@ body{
         @extend %gridcenter;
         grid-template-rows: 4fr 1fr;
         grid-template-columns: repeat(3,1fr);
-        margin: 15%;
+        margin: 10% 15%;
 
         .centerdiv{
             background-color: bisque;
@@ -37,27 +39,40 @@ body{
             .phrasegrid{
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
-                grid-template-rows: repeat(5,1fr);
+                grid-template-rows: clamp(auto,auto,8rem) repeat(4,1fr);
 
                 .title{
                     grid-area: 1/1/2/3;
                     font-size: 2.4rem
                 }
                 .prename{
+                    margin-top: 0.3rem;
                     grid-area: 1/3/2/4;
                     text-align: right;
-                    font-size: 1rem;
+                    font-size: 0.7rem;
+                    opacity: 0.4;
                 }
                 .myName{
+                    
                     font-family: $nameFont;
-                    font-size: 1.7rem;
+                    font-size: 1.2rem;
                 }
                 .randomPhrase{
                 grid-area: 2/1/5/4; 
                 margin:auto;
-                font-size: 2.3rem;
+                font-size: 2rem;
                 position:relative;
                 text-align: center;
+
+                }
+                .randomPhrase::before{
+                    opacity:0.2;
+                    top:-1rem;
+                    inset-inline-start: -0.7rem;
+                    position: absolute;
+                    content:"\"";
+                    font-size: 5rem;
+                    
                 }
                 .nameFromRandom{
                     grid-area: 5/3/6/4; 
@@ -70,12 +85,14 @@ body{
             background-color:antiquewhite;
         }
         .reloadbutton{
+            font-size: 2rem;
             border: transparent;
             background-color: bisque;
+            margin-block-start: 1%;
             margin-inline: 20%;
             border-radius: 5%;
             box-shadow: 0.5rem 0.5rem rgba(0, 128, 128, 0.513);
-            grid-area: 2/2/3/3;
+            grid-area: 2/1/3/4;
             padding: 1rem;
             transition: all 500ms;           
         }
@@ -87,8 +104,208 @@ body{
 }
 
 
+/* colors */
+.test {
+    
+    background-color: #74c69d;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #52b788;
+                border: 0.7rem solid #52b788;
+                box-shadow: 1rem 1rem #2d6a4f;
+                .phrasegrid{
+                    %textcolor {
+                        color: #b7e4c7;
+                        text-shadow: 2px 2px 2px #081c15   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #1b4332;
+                background-color: #40916c;
+                border: 0.7rem solid #40916c;
+            }
+            .reloadbutton{
+                color: #b7e4c7;
+                text-shadow: 2px 2px 2px #081c15;
+                background-color: #52b788;
+                box-shadow: 0.5rem 0.5rem #2d6a4f;
 
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #1b4332;
+                background-color: #40916c;
+            }
+        }
+    }
+}
+.deepgreen {
+    
+    background-color: #74c69d;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #52b788;
+                border: 0.7rem solid #52b788;
+                box-shadow: 1rem 1rem #2d6a4f;
+                .phrasegrid{
+                    %textcolor {
+                        color: #b7e4c7;
+                        text-shadow: 2px 2px 2px #081c15   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #1b4332;
+                background-color: #40916c;
+                border: 0.7rem solid #40916c;
+            }
+            .reloadbutton{
+                color: #b7e4c7;
+                text-shadow: 2px 2px 2px #081c15;
+                background-color: #52b788;
+                box-shadow: 0.5rem 0.5rem #2d6a4f;
 
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #1b4332;
+                background-color: #40916c;
+            }
+        }
+    }
+}
+.twilightpallete {
+    
+    background-color: #f72585;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #480ca8;
+                border: 0.7rem solid #480ca8;
+                box-shadow: 1rem 1rem #b5179e;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #4895ef   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #7209b7;
+                background-color: #480ca8;
+                border: 0.7rem solid #480ca8;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #4895ef;
+                background-color: #480ca8;
+                box-shadow: 0.5rem 0.5rem #b5179e;
 
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #7209b7;
+                background-color: #480ca8;
+            }
+        }
+    }
+}
+.pastelpink {
+    
+    background-color: #CDB4DB;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{
+               
+                background-color: #ffc8dd;
+                border: 0.7rem solid #ffc8dd;
+                box-shadow: 1rem 1rem #ffafcc;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #b565e4   
+                    }
+                    
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+            
+                box-shadow: 1.2rem 1.2rem #ec94b4;
+                background-color: #ebadc5;
+                border: 0.7rem solid #ebadc5;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #b565e4;
+                background-color: #ffc8dd;
+                box-shadow: 0.5rem 0.5rem #ffafcc;
 
-
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #ec94b4;
+                background-color: #ebadc5;
+            }
+        }
+    }
+}
