@@ -38,10 +38,10 @@ export const PhraseGen = () => {
           <h2 className="prename">
             Created with love by <span className="myName">@laaledesiempre</span>
           </h2>
-          <h3 className="randomPhrase" id="randomPhrase">
+          <h3 className="randomPhrase" id="text">
             {store.quote}
           </h3>
-          <h4 className="nameFromRandom" id="name">
+          <h4 className="nameFromRandom" id="author">
             {store.author}
           </h4>
         </div>
