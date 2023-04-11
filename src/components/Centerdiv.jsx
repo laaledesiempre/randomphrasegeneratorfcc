@@ -8,10 +8,10 @@ export function Centerdiv() {
   const fetch = useSelector((state) => state.fetchReducer.fetchStatus);
   const dispatch = useDispatch();
   const [buttonState, setButtonState] = useState(true);
-  const classArray = {
+  const [classArray,setClassArray] = useState({
     currentclassname: "",
-    palletes: ["pastelpink", "twilightpallete", "deepgreen"],
-  };
+    palletes: ["pastelpink", "twilightpallete", "deepgreen","freshlime","seriusgrapejuice","stragestsofter","neonmaster","winefun","visitmesa","eboy","summertime","telltell"],
+  });
   const changePhrase = () => {
     setButtonState(true);
     dispatch(setpayload(false));
@@ -20,10 +20,14 @@ export function Centerdiv() {
   useEffect(() => {
     if (fetch === true) {
       setButtonState(false);
-      classArray.currentclassname = classArray.palletes.filter(
-        (e) => e !== classArray.currentclassname
-      )[Math.floor(Math.random() * (classArray.palletes.length - 1))];
-
+      setClassArray({
+        currentclassname: classArray.palletes.filter(
+          (e) => e !== classArray.currentclassname
+        )[Math.floor(Math.random() * (classArray.palletes.length - 1))],
+    palletes: classArray.palletes,
+      })
+      
+      
       $("body").attr("class", classArray.currentclassname);
     }
   }, [fetch]);

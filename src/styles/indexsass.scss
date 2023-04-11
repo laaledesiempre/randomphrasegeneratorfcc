@@ -1,6 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Lora:ital@1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Kanit:ital,wght@1,200&family=Lora:ital@1&family=PT+Serif&display=swap');
+
 $generalFont:'Lora', serif;;
 $nameFont:'Delicious Handrawn', cursive;
+$phrase: 'Kanit', sans-serif;
+$name: 'PT Serif', serif;
 
 /* npm install sass. */
 
@@ -17,7 +21,7 @@ $nameFont:'Delicious Handrawn', cursive;
     font-family: $generalFont;
 }
 body{
-    background-color:aquamarine;
+    background-color:grey;
 }
 
 .viewport-background{
@@ -28,12 +32,12 @@ body{
         margin: 10% 15%;
 
         .centerdiv{
-            background-color: bisque;
+            background-color: white;
             grid-area: 1/1/2/4;
-            border: 0.7rem solid bisque;
+            border: 0.7rem solid white;
             padding: 1rem;
             border-radius: 5%;
-            box-shadow: 1rem 1rem rgba(0, 128, 128, 0.513);
+            box-shadow: 1rem 1rem black;
             transition: all 500ms;
 
             .phrasegrid{
@@ -58,11 +62,12 @@ body{
                     font-size: 1.2rem;
                 }
                 .randomPhrase{
-                grid-area: 2/1/5/4; 
-                margin:auto;
-                font-size: 2rem;
-                position:relative;
-                text-align: center;
+                    font-family: $phrase;
+                    grid-area: 2/1/5/4; 
+                    margin:auto;
+                    font-size: 2rem;
+                    position:relative;
+                    text-align: center;
 
                 }
                 .randomPhrase::before{
@@ -75,30 +80,31 @@ body{
                     
                 }
                 .nameFromRandom{
+                    font-family: $name;
                     grid-area: 5/3/6/4; 
                     margin:auto;
                 }
             }
         }
         .centerdiv:hover{
-            box-shadow: 1.2rem 1.2rem rgba(0, 128, 128, 0.513);
-            background-color:antiquewhite;
+            box-shadow: 1.2rem 1.2rem darkgrey;
+            background-color:white;
         }
         .reloadbutton{
             font-size: 2rem;
             border: transparent;
-            background-color: bisque;
+            background-color: white;
             margin-block-start: 1%;
             margin-inline: 20%;
             border-radius: 5%;
-            box-shadow: 0.5rem 0.5rem rgba(0, 128, 128, 0.513);
+            box-shadow: 0.5rem 0.5rem black;
             grid-area: 2/1/3/4;
             padding: 1rem;
             transition: all 500ms;           
         }
         .reloadbutton:hover{
-            box-shadow: 0.7rem 0.7rem rgba(0, 128, 128, 0.513);
-            background-color:antiquewhite;
+            box-shadow: 0.7rem 0.7rem darkgray;
+            background-color:white;
         }
     }
 }
@@ -107,17 +113,17 @@ body{
 /* colors */
 .test {
     
-    background-color: #74c69d;
+    background-color: #E01E37;
     .viewport-background{
         .content-grid{  
             .centerdiv{             
-                background-color: #52b788;
-                border: 0.7rem solid #52b788;
-                box-shadow: 1rem 1rem #2d6a4f;
+                background-color: #641220;
+                border: 0.7rem solid #641220;
+                box-shadow: 1rem 1rem #C71F37;
                 .phrasegrid{
                     %textcolor {
-                        color: #b7e4c7;
-                        text-shadow: 2px 2px 2px #081c15   
+                        color: darkorange;
+                        text-shadow: 2px 2px 2px red   
                     } 
                     .title{
                         @extend %textcolor
@@ -138,20 +144,480 @@ body{
                 }
             }
             .centerdiv:hover{
-                box-shadow: 1.2rem 1.2rem #1b4332;
-                background-color: #40916c;
-                border: 0.7rem solid #40916c;
+                box-shadow: 1.2rem 1.2rem #B21E35;
+                background-color: #85182A;
+                border: 0.7rem solid #85182A;
             }
             .reloadbutton{
-                color: #b7e4c7;
-                text-shadow: 2px 2px 2px #081c15;
-                background-color: #52b788;
-                box-shadow: 0.5rem 0.5rem #2d6a4f;
+                color: darkorange;
+                text-shadow: 2px 2px 2px red;
+                background-color: #C71F37;
+                box-shadow: 0.5rem 0.5rem #641220;
 
             }
             .reloadbutton:hover{
-                box-shadow: 0.7rem 0.7rem  #1b4332;
-                background-color: #40916c;
+                box-shadow: 0.7rem 0.7rem  #B21E35;
+                background-color: #85182A;
+            }
+        }
+    }
+}
+.telltell {
+    
+    background-color: #E01E37;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #641220;
+                border: 0.7rem solid #641220;
+                box-shadow: 1rem 1rem #C71F37;
+                .phrasegrid{
+                    %textcolor {
+                        
+                        color: darkorange;
+                        text-shadow: 2px 2px 2px red   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #B21E35;
+                background-color: #85182A;
+                border: 0.7rem solid #85182A;
+            }
+            .reloadbutton{
+                color: darkorange;
+                text-shadow: 2px 2px 2px red;
+                background-color: #C71F37;
+                box-shadow: 0.5rem 0.5rem #641220;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #B21E35;
+                background-color: #85182A;
+            }
+        }
+    }
+}
+.summertime {
+    
+    background-color: #FFEA00;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #FFC300;
+                border: 0.7rem solid #FFC300;
+                box-shadow: 1rem 1rem #FF9500;
+                .phrasegrid{
+                    %textcolor {
+                        color: darkorange;
+                        text-shadow: 2px 2px 2px red   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #FF7B00;
+                background-color: #FFB700;
+                border: 0.7rem solid #FFB700;
+            }
+            .reloadbutton{
+                color: darkorange;
+                text-shadow: 2px 2px 2px red;
+                background-color: #FFC300;
+                box-shadow: 0.5rem 0.5rem #FF9500;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #FF7B00;
+                background-color: #FFB700;
+            }
+        }
+    }
+}
+.eboy {
+    
+    background-color: #FFE6A7;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #99582A;
+                border: 0.7rem solid #99582A;
+                box-shadow: 1rem 1rem #432818;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #BB9457   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #6F1D1B;
+                background-color: #d4a373;
+                border: 0.7rem solid #d4a373;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #BB9457;
+                background-color: #99582A;
+                box-shadow: 0.5rem 0.5rem #432818;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #6F1D1B;
+                background-color: #d4a373;
+            }
+        }
+    }
+}
+.visitmesa {
+    
+    background-color: #C9CBA3;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #E26D5C;
+                border: 0.7rem solid #E26D5C;
+                box-shadow: 1rem 1rem #892B64;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #B7094C   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #472D30;
+                background-color: #723D46;
+                border: 0.7rem solid #723D46;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #B7094C;
+                background-color: #E26D5C;
+                box-shadow: 0.5rem 0.5rem #892B64;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #472D30;
+                background-color: #723D46;
+            }
+        }
+    }
+}
+.winefun {
+    
+    background-color: #723C70;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #A01A58;
+                border: 0.7rem solid #A01A58;
+                box-shadow: 1rem 1rem #892B64;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #B7094C   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #455E89;
+                background-color: #5C4D7D;
+                border: 0.7rem solid #5C4D7D;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #B7094C;
+                background-color: #A01A58;
+                box-shadow: 0.5rem 0.5rem #892B64;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #455E89;
+                background-color: #5C4D7D;
+            }
+        }
+    }
+}
+.neonmaster {
+    
+    background-color: #0B132B;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #3A506B;
+                border: 0.7rem solid #3A506B;
+                box-shadow: 1rem 1rem #6FFFE9;
+                .phrasegrid{
+                    %textcolor {
+                        color: white;
+                        text-shadow: 2px 2px 2px #6FFFE9   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #5BC0BE;
+                background-color: #1C2541;
+                border: 0.7rem solid #1C2541;
+            }
+            .reloadbutton{
+                color: white;
+                text-shadow: 2px 2px 2px #6FFFE9;
+                background-color: #3A506B;
+                box-shadow: 0.5rem 0.5rem #6FFFE9;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #5BC0BE;
+                background-color: #1C2541;
+            }
+        }
+    }
+}
+.stragestsofter {
+    
+    background-color: #b5179e;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #B9FAF8;
+                border: 0.7rem solid #B9FAF8;
+                box-shadow: 1rem 1rem #B298DC;
+                .phrasegrid{
+                    %textcolor {
+                        color: #6F2DBD;
+                        text-shadow: 2px 2px 2px #e2afff   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #A663CC;
+                background-color: #B8D0EB;
+                border: 0.7rem solid #B8D0EB;
+            }
+            .reloadbutton{
+                color: #6F2DBD;
+                text-shadow: 2px 2px 2px #e2afff;
+                background-color: #B9FAF8;
+                box-shadow: 0.5rem 0.5rem #B298DC;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #A663CC;
+                background-color: #B8D0EB;
+            }
+        }
+    }
+}
+.seriusgrapejuice {
+    
+    background-color: #4D194D;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #1B3A4B;
+                border: 0.7rem solid #1B3A4B;
+                box-shadow: 1rem 1rem #272640;
+                .phrasegrid{
+                    %textcolor {
+                        color: whitesmoke;
+                        text-shadow: 2px 2px 2px #006466   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #212F45;
+                background-color: #144552;
+                border: 0.7rem solid #144552;
+            }
+            .reloadbutton{
+                color: whitesmoke;
+                text-shadow: 2px 2px 2px #006466;
+                background-color: #1B3A4B;
+                box-shadow: 0.5rem 0.5rem #272640;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #212F45;
+                background-color: #144552;
+            }
+        }
+    }
+}
+.freshlime {
+    
+    background-color: #1DD3B0;
+    .viewport-background{
+        .content-grid{  
+            .centerdiv{             
+                background-color: #B2FF9E;
+                border: 0.7rem solid #B2FF9E;
+                box-shadow: 1rem 1rem #086375;
+                .phrasegrid{
+                    %textcolor {
+                        color: #3C1642;
+                        text-shadow: 2px 2px 2px #1DD3B0   
+                    } 
+                    .title{
+                        @extend %textcolor
+                    }
+                    .prename{
+                        @extend %textcolor
+                    }
+                    .myName{
+                        @extend %textcolor
+                    }
+                    .randomPhrase{
+                        @extend %textcolor
+                    }
+                
+                    .nameFromRandom{
+                        @extend %textcolor
+                    }
+                }
+            }
+            .centerdiv:hover{
+                box-shadow: 1.2rem 1.2rem #3C1642;
+                background-color: #AFFC41;
+                border: 0.7rem solid #AFFC41;
+            }
+            .reloadbutton{
+                color: #3C1642;
+                text-shadow: 2px 2px 2px #081c15;
+                background-color: #B2FF9E;
+                box-shadow: 0.5rem 0.5rem #086375;
+
+            }
+            .reloadbutton:hover{
+                box-shadow: 0.7rem 0.7rem  #3C1642;
+                background-color: #AFFC41;
             }
         }
     }
@@ -269,7 +735,7 @@ body{
                 .phrasegrid{
                     %textcolor {
                         color: white;
-                        text-shadow: 2px 2px 2px #b565e4   
+                        text-shadow: 2px 2px 5px #b565e4   
                     }
                     
                     .title{
@@ -309,3 +775,58 @@ body{
         }
     }
 }
+/* animation */
+.center {
+    transform: scale(0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .wave {
+    width: 5px;
+    height: 100px;
+    background: linear-gradient(45deg, rgba(0,0,0,0), rgba(0,0,0,0.2));
+    margin: 10px;
+    animation: wave 1s linear infinite;
+    border-radius: 20px;
+  }
+  .wave:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .wave:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .wave:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .wave:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .wave:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .wave:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .wave:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .wave:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .wave:nth-child(10) {
+    animation-delay: 0.9s;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }

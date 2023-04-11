@@ -18,7 +18,18 @@ export const PhraseGen = () => {
     }, [store]);
 
   if (!fetch) {
-    return <h1>loading</h1>;
+    return <div class="center">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div>;
   } else {
     return (
       <>
