@@ -34,15 +34,15 @@ export function Centerdiv() {
 
   return (
     <>
-      <div className="centerdiv">
+      <div className="centerdiv" id="quote-box">
         <PhraseGen />
       </div>
-      <button
+      <button id="new-quote"
         className="reloadbutton"
         onClick={changePhrase}
         disabled={buttonState}
       >
-        Push me!
+        New Quote!
       </button>
     </>
   );
