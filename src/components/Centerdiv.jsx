@@ -33,7 +33,7 @@ export function Centerdiv() {
       
       $("body").attr("class", classArray.currentclassname);
     }
-  }, [fetch]);
+  }, [fetch,classArray.currentclassname,classArray.palletes,store.quote]);//'classArray.currentclassname', 'classArray.palletes', and 'store.quote'
 
   return (
     <>
