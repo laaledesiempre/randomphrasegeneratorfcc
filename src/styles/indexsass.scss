@@ -47,7 +47,7 @@ body{
 .viewport-background{
     .content-grid{
         @extend %gridcenter;
-        grid-template-rows: 4fr 1fr 1fr;
+        grid-template-rows: 4fr 10rem 5rem;
         grid-template-columns: repeat(3,1fr);
         margin: 10% 15%;
 
