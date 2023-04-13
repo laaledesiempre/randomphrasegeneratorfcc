@@ -6,8 +6,10 @@ import { setpayload } from "../store/slices/fetch";
 import { useDispatch, useSelector } from "react-redux";
 export function Centerdiv() {
   const fetch = useSelector((state) => state.fetchReducer.fetchStatus);
+  const store = useSelector((state) => state.phrasesReducer.list);
   const dispatch = useDispatch();
   const [buttonState, setButtonState] = useState(true);
+  const [uriQuote, setUriQuote] = useState("");
   const [classArray,setClassArray] = useState({
     currentclassname: "",
     palletes: ["pastelpink", "twilightpallete", "deepgreen","freshlime","seriusgrapejuice","stragestsofter","neonmaster","winefun","visitmesa","eboy","summertime","telltell"],
@@ -26,6 +28,7 @@ export function Centerdiv() {
         )[Math.floor(Math.random() * (classArray.palletes.length - 1))],
     palletes: classArray.palletes,
       })
+      setUriQuote(encodeURI(store.quote))
       
       
       $("body").attr("class", classArray.currentclassname);
@@ -44,6 +47,7 @@ export function Centerdiv() {
       >
         New Quote!
       </button>
+      <a className="tweetbutton" target="_blank" rel="noreferrer" href={"https://twitter.com/intent/tweet?text="+uriQuote} id="tweet-quote">Tweet this quote!</a>
     </>
   );
 }
