@@ -33,7 +33,8 @@ export function Centerdiv() {
       
       $("body").attr("class", classArray.currentclassname);
     }
-  }, [fetch,classArray.currentclassname,classArray.palletes,store.quote]);//'classArray.currentclassname', 'classArray.palletes', and 'store.quote'
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetch]);//'classArray.currentclassname', 'classArray.palletes', and 'store.quote'
 
   return (
     <>
