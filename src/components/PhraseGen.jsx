@@ -15,7 +15,7 @@ export const PhraseGen = () => {
         if (typeof store === "object") {
         dispatch(setpayload(true));
         }
-    }, [store]);
+    }, [store,dispatch]);
 
   if (!fetch) {
     return <div className="center">
