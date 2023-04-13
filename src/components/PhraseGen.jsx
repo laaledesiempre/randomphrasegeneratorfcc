@@ -34,7 +34,7 @@ export const PhraseGen = () => {
     return (
       <>
         <div className="phrasegrid">
-          <h1 className="title">Phrase Generator!</h1>
+          <h1 className="title">Quote Generator!</h1>
           <h2 className="prename">
             Created with love by <span className="myName">@laaledesiempre</span>
           </h2>
