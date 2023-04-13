@@ -15,6 +15,7 @@ export const PhraseGen = () => {
         if (typeof store === "object") {
         dispatch(setpayload(true));
         }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [store]);
 
   if (!fetch) {
